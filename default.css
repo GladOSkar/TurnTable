@@ -1,0 +1,106 @@
+body{
+ font-family:calibri,sans-serif;
+ font-size:40px;
+}
+
+input{
+ display:none;
+}
+
+input~label>div{
+ height:30px;
+ width:30px;
+ 
+}
+
+input:not(checked)+label>div{
+ background-color:blue;
+}
+
+input:checked+label>div{
+ background-color:red;
+}
+
+#arm{
+ position:absolute;
+ top:-70px;
+ left:406px;
+ height:400px;
+ width:100px;
+ float:left;
+ z-index:2;
+ transform:rotate(0deg);
+ transition:all 500ms ease-in-out;
+}
+
+#stick{
+ position:absolute;
+ background-color:gray;
+ top:150px;
+ left:45px;
+ height:300px;
+ width:10px;
+}
+
+#stick > div{
+ background-color:#3f3f3f;
+ margin-top:290px;
+ margin-left:-5px;
+ height:40px;
+ width:20px;
+ transform:rotate(28deg);
+}
+
+#tp{
+ position:absolute;
+ background-color:black;
+ top:185px;
+ left:35px;
+ height:30px;
+ width:30px;
+ border-radius:15px;
+}
+
+#spinner{
+ position:absolute;
+ float:left;
+ left:100px;
+ top:100px;
+ width:330px;
+ height:330px;
+ background:gray;
+ border-radius:200px;
+ overflow:hidden;
+ transform:rotate(360deg);
+ transition:all 1300ms ease-out;
+ z-index:1;
+} 
+
+input:checked~#arm{
+ transform:rotate(20deg);
+ transition:all 500ms ease-in-out; 
+ /*animation: eindrehen 2727ms ease-in-out,
+               drehen 1818ms linear 2727ms infinite;
+*/}
+
+input:checked~#spinner{ 
+ animation: eindrehen 2727ms ease-in,
+               drehen 1818ms linear 2727ms infinite;
+}
+
+img {
+ height:127%;
+ width:127%;
+ margin-left:-45px;
+ margin-top:-45px;
+}
+
+@keyframes eindrehen {
+ 0%   {transform:rotate(0deg);}
+ 100% {transform:rotate(360deg);}
+}
+
+@keyframes drehen {
+ 0%   {transform:rotate(0deg);}
+ 100% {transform:rotate(360deg);}
+}
