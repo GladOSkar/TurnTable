@@ -10,24 +10,28 @@ body{
 	height: 400px;
 	width: 450px;
 	background-color: orange;
-	z-index: -2;
 }
 
 input{
- display:none;
+	display:none;
 }
 
-input~label>div{
-	height:30px;
-	width:30px;
+input ~ label > div {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	height: 32px;
+	width: 64px;
+	background-color: #ffdd00;
+	border-radius: 4px;
 }
 
-input:not(checked)+label>div{
- background-color:blue;
+input:not(checked) + label > div > div:nth-child(3) {
+ left: 1px;
 }
 
-input:checked+label>div{
- background-color:red;
+input:checked + label > div > div:nth-child(3) {
+ left: 33px;
 }
 
 #arm{
@@ -40,7 +44,6 @@ input:checked+label>div{
 	z-index: 2;
 	transform: rotate(0deg);
 	transition: all 500ms ease-in-out;
-	z-index: 0;
 }
 
 #stick{
@@ -51,10 +54,9 @@ input:checked+label>div{
 	height: 250px;
 	width: 10px;
 	border-radius: 5px;
-	z-index: 1;
 }
 
-#stick > div{
+#stick > div:nth-child(2){
 	position: absolute;
 	background-color: gray;
 	transform: rotate(32deg);
@@ -79,29 +81,28 @@ input:checked+label>div{
 #tp{
 	position: absolute;
 	background-color: black;
-	top: 235px;
-	left: 35px;
-	height: 30px;
-	width: 30px;
-	border-radius: 15px;
+	top: 230px;
+	left: 30px;
+	height: 40px;
+	width: 40px;
+	border-radius: 20px;
 }
 
 #spinner{
 	position: absolute;
 	float: left;
-	left: 25px;
-	top: 25px;
-	width: 350px;
-	height: 350px;
+	left: 30px;
+	top: 30px;
+	width: 340px;
+	height: 340px;
 	background: black;
 	border-radius: 180px;
-	z-index: 0;
 }
 
 #spinner > div{
 	position: absolute;
 	background-color: white;
-	margin: 125px;
+	margin: 120px;
 	width: 100px;
 	height: 100px;
 	border-radius: 50px;
@@ -136,28 +137,62 @@ input:checked~#spinner{
                drehen 1818ms linear 2727ms infinite;
 }
 
-img {
- height:127%;
- width:127%;
- margin-left:-45px;
- margin-top:-45px;
-}
-
 @keyframes eindrehen {
- 0%   {transform:rotate(0deg);}
- 100% {transform:rotate(360deg);}
+	0%   {transform:rotate(0deg);}
+	100% {transform:rotate(360deg);}
 }
 
 @keyframes drehen {
- 0%   {transform:rotate(0deg);}
- 100% {transform:rotate(360deg);}
+	0%   {transform:rotate(0deg);}
+	100% {transform:rotate(360deg);}
 }
+
 #tb {
 	position: absolute;
 	background-color: darkgrey;
-	top: 30px;
-	left: 320px;
+	border: 1px solid black;
+	top: 29px;
+	left: 319px;
 	height: 100px;
 	width: 100px;
 	border-radius: 50px;
+}
+
+#stick > div:nth-child(1) {
+	position: absolute;
+	background-color: 3f3f3f;
+	top: -16px;
+	left: -10;
+	height: 30px;
+	width: 30px;
+}
+
+input ~ label > div > div:nth-child(3) {
+	position: absolute;
+	top: 1px;
+	height: 30px;
+	width: 30px;
+	background-color: #dd6600;
+	border-radius: 4px;
+	transition: all 200ms ease-in-out;
+}
+
+input ~ label > div > div:nth-child(1) {
+	position: absolute;
+	top: 8px;
+	left: 10px;
+	height: 0px;
+	width: 0px;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+	border-left: 14px solid orange;
+}
+
+input ~ label > div > div:nth-child(2) {
+	position: absolute;
+	background-color: orange;
+	top: 8px;
+	left: 39px;
+	height: 16px;
+	width: 16px;
 }
