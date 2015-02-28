@@ -3,14 +3,23 @@ body{
  font-size:40px;
 }
 
+#table{
+	position: relative;
+	margin-left: 100px;
+	margin-top: 100px;
+	height: 400px;
+	width: 450px;
+	background-color: orange;
+	z-index: -2;
+}
+
 input{
  display:none;
 }
 
 input~label>div{
- height:30px;
- width:30px;
- 
+	height:30px;
+	width:30px;
 }
 
 input:not(checked)+label>div{
@@ -22,69 +31,108 @@ input:checked+label>div{
 }
 
 #arm{
- position:absolute;
- top:-70px;
- left:406px;
- height:400px;
- width:100px;
- float:left;
- z-index:2;
- transform:rotate(0deg);
- transition:all 500ms ease-in-out;
+	position: absolute;
+	top: -170px;
+	left: 320px;
+	height: 500px;
+	width: 100px;
+	float: left;
+	z-index: 2;
+	transform: rotate(0deg);
+	transition: all 500ms ease-in-out;
+	z-index: 0;
 }
 
 #stick{
- position:absolute;
- background-color:gray;
- top:150px;
- left:45px;
- height:300px;
- width:10px;
+	position: absolute;
+	background-color: gray;
+	top: 200px;
+	left: 45px;
+	height: 250px;
+	width: 10px;
+	border-radius: 5px;
+	z-index: 1;
 }
 
 #stick > div{
- background-color:#3f3f3f;
- margin-top:290px;
- margin-left:-5px;
- height:40px;
- width:20px;
- transform:rotate(28deg);
+	position: absolute;
+	background-color: gray;
+	transform: rotate(32deg);
+	margin-top: 239px;
+	margin-left: -11px;
+	height: 50px;
+	width: 10px;
+	border-radius: 5px;
+	z-index: 1;
+}
+
+#stick > div > div{
+	position: absolute;
+	background-color: #3f3f3f;
+	margin-top: 24px;
+	margin-left: -5px;
+	height: 40px;
+	width: 20px;
+	z-index: 1;
 }
 
 #tp{
- position:absolute;
- background-color:black;
- top:185px;
- left:35px;
- height:30px;
- width:30px;
- border-radius:15px;
+	position: absolute;
+	background-color: black;
+	top: 235px;
+	left: 35px;
+	height: 30px;
+	width: 30px;
+	border-radius: 15px;
 }
 
 #spinner{
- position:absolute;
- float:left;
- left:100px;
- top:100px;
- width:330px;
- height:330px;
- background:gray;
- border-radius:200px;
- overflow:hidden;
- transform:rotate(360deg);
- transition:all 1300ms ease-out;
- z-index:1;
-} 
+	position: absolute;
+	float: left;
+	left: 25px;
+	top: 25px;
+	width: 350px;
+	height: 350px;
+	background: black;
+	border-radius: 180px;
+	z-index: 0;
+}
+
+#spinner > div{
+	position: absolute;
+	background-color: white;
+	margin: 125px;
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+}
+
+#spinner > div > div{
+	position: absolute;
+	background-color: grey;
+	margin: 48px;
+	height: 4px;
+	width: 4px;
+	border-radius: 2px;
+}
+
+#spinner > div > div > span{
+	position: absolute;
+	color: black;
+	font-size: 24px;
+	top: -28;
+	left: -32;
+}
 
 input:checked~#arm{
- transform:rotate(20deg);
- transition:all 500ms ease-in-out; 
- /*animation: eindrehen 2727ms ease-in-out,
-               drehen 1818ms linear 2727ms infinite;
-*/}
+	transform:rotate(24deg);
+	transition:all 500ms ease-in-out;
+}
 
-input:checked~#spinner{ 
- animation: eindrehen 2727ms ease-in,
+input:checked~#spinner{
+	animation: eindrehen 2727ms ease-in,
+               drehen 1818ms linear 2727ms infinite;
+	-webkit-animation: eindrehen 2727ms ease-in,
                drehen 1818ms linear 2727ms infinite;
 }
 
@@ -103,4 +151,13 @@ img {
 @keyframes drehen {
  0%   {transform:rotate(0deg);}
  100% {transform:rotate(360deg);}
+}
+#tb {
+	position: absolute;
+	background-color: darkgrey;
+	top: 30px;
+	left: 320px;
+	height: 100px;
+	width: 100px;
+	border-radius: 50px;
 }
