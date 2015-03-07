@@ -1,6 +1,6 @@
 body{
- font-family:calibri,sans-serif;
- font-size:40px;
+	font-family:calibri,sans-serif;
+	background-color: #eee;
 }
 
 #table{
@@ -10,6 +10,7 @@ body{
 	height: 400px;
 	width: 450px;
 	background-color: orange;
+	border-radius: 10px;
 }
 
 input{
@@ -43,7 +44,7 @@ input:checked + label > div > div:nth-child(3) {
 	float: left;
 	z-index: 2;
 	transform: rotate(0deg);
-	transition: all 500ms ease-in-out;
+	transition: all 1s ease-in-out;
 }
 
 #stick{
@@ -71,7 +72,7 @@ input:checked + label > div > div:nth-child(3) {
 #stick > div > div{
 	position: absolute;
 	background-color: #3f3f3f;
-	margin-top: 24px;
+	margin-top: 20px;
 	margin-left: -5px;
 	height: 40px;
 	width: 20px;
@@ -96,7 +97,7 @@ input:checked + label > div > div:nth-child(3) {
 	width: 340px;
 	height: 340px;
 	background: black;
-	border-radius: 180px;
+	border-radius: 169px;
 }
 
 #spinner > div{
@@ -126,25 +127,42 @@ input:checked + label > div > div:nth-child(3) {
 }
 
 input:checked~#arm{
-	transform:rotate(24deg);
-	transition:all 500ms ease-in-out;
+	/*transform: rotate(32deg);
+	transition: all 1s ease-in-out;*/
+	animation: hin 500ms ease-in,
+			   weiter 10s linear 500ms infinite;
+	-webkit-animation: hin 500ms ease-in,
+					   weiter 10s linear 500ms infinite;
+}
+
+@keyframes hin {
+	0%	{transform:rotate(0deg);}
+	100%{transform:rotate(5deg);}
+}
+
+@keyframes weiter {
+	0%	{transform:rotate(5deg);}
+	10%	{transform:rotate(5deg);}
+	80% {transform:rotate(36deg);}
+	90% {transform:rotate(36deg);}
+	100%{transform:rotate(5deg);}
 }
 
 input:checked~#spinner{
-	animation: eindrehen 2727ms ease-in,
-               drehen 1818ms linear 2727ms infinite;
-	-webkit-animation: eindrehen 2727ms ease-in,
-               drehen 1818ms linear 2727ms infinite;
+	animation: drehen 2727ms ease-in 1s,
+			   drehen 1818ms linear 3727ms infinite;
+	-webkit-animation: drehen 2727ms ease-in 1s,
+					   drehen 1818ms linear 3727ms infinite;
 }
 
-@keyframes eindrehen {
-	0%   {transform:rotate(0deg);}
-	100% {transform:rotate(360deg);}
+input:not(checked)~#spinner{
+	transform: rotate(360deg);
+	transition: all 2s ease-out;
 }
 
 @keyframes drehen {
-	0%   {transform:rotate(0deg);}
-	100% {transform:rotate(360deg);}
+	from{transform:rotate(0deg);}
+	to	{transform:rotate(360deg);}
 }
 
 #tb {
