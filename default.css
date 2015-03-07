@@ -112,10 +112,10 @@ input:checked + label > div > div:nth-child(3) {
 #spinner > div > div{
 	position: absolute;
 	background-color: grey;
-	margin: 48px;
-	height: 4px;
-	width: 4px;
-	border-radius: 2px;
+	margin: 47px;
+	height: 6px;
+	width: 6px;
+	border-radius: 3px;
 }
 
 #spinner > div > div > span{
@@ -213,4 +213,34 @@ input ~ label > div > div:nth-child(2) {
 	left: 39px;
 	height: 16px;
 	width: 16px;
+}
+
+#slider {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	height: 128px;
+	width: 32px;
+	background-color: #ffdd00;
+	border-radius: 4px;
+}
+
+#slider > div:nth-child(1) {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	height: 98px;
+	width: 2px;
+	background-color: orange;
+	border-radius: 4px;
+}
+
+#slider > div:nth-child(2) {
+	position: absolute;
+	top: 64px;
+	left: 1px;
+	height: 16px;
+	width: 30px;
+	background-color: #dd6600;
+	border-radius: 4px;
 }
