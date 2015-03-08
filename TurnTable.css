@@ -157,9 +157,9 @@ body{
 
 #tt_arm > div:nth-child(1) > div:nth-child(1) {
 	position: absolute;
-	background-color: 3f3f3f;
+	background-color: #3f3f3f;
 	top: -16px;
-	left: -10;
+	left: -10px;
 	height: 30px;
 	width: 30px;
 }
